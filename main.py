@@ -7,7 +7,7 @@ import dask.dataframe as dd
 
 
 class Watcher:
-    DIRECTORY_TO_WATCH = "~/home/gooni"
+    DIRECTORY_TO_WATCH = "/home"
 
     def __init__(self):
         self.observer = Observer()
@@ -30,7 +30,7 @@ class Watcher:
 class Handler(FileSystemEventHandler):
     @staticmethod
     def on_any_event(event):
-        DIRECTORY_TO_WATCH = "~/home/gooni"
+        DIRECTORY_TO_WATCH = "/home"
         if event.is_directory:
             return None
 
